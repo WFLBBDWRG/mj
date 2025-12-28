@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杰米 | 2026 见字如面</title>
+    <style>
+        :root {
+            --apple-blue: #0071e3;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --text-dark: #1d1d1f;
+            --text-gray: #86868b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif;
+        }
+
+        body {
+            background: #f5f5f7;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 0% 0%, #e3f2fd 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, #e0f2fe 0%, transparent 50%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 状态栏 */
+        .ios-status {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* 头部卡片 */
+        .hero-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .avatar-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--apple-blue);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .identity h1 { font-size: 24px; font-weight: 800; }
+        .identity p { font-size: 11px; font-weight: 800; color: var(--apple-blue); letter-spacing: 1px; }
+
+        /* 信息网格 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .grid-item {
+            background: white;
+            padding: 20px;
+            border-radius: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .grid-label { font-size: 10px; font-weight: 800; color: var(--text-gray); margin-bottom: 8px; display: block; }
+        .grid-value { font-size: 15px; font-weight: 800; }
+
+        /* 数学模块 */
+        .math-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #0071e3, #00d2ff);
+            color: white;
+        }
+
+        .formula { font-family: "Times New Roman", serif; font-style: italic; font-size: 20px; margin: 10px 0; text-align: center; }
+
+        /* 惊喜留言区域 - 替换了原来的进度条 */
+        .message-section {
+            background: white;
+            padding: 25px;
+            border-radius: 28px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            border: 2px dashed rgba(0, 113, 227, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-section:hover {
+            transform: scale(1.02);
+            background: rgba(0, 113, 227, 0.02);
+            border-color: var(--apple-blue);
+        }
+
+        .message-section:active {
+            transform: scale(0.98);
+        }
+
+        #surprise-text {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--apple-blue);
+            transition: all 0.5s ease;
+        }
+
+        /* 底部 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .blue-text { color: var(--apple-blue); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 状态栏 -->
+        <div class="ios-status">
+            <span>27:78</span>
+            <div style="display: flex; gap: 8px;">
+                <span>信号满格</span>
+                <span>Wi-Fi</span>
+                <span>100% 🔋</span>
+            </div>
+        </div>
+
+        <!-- 头部 -->
+        <div class="hero-card">
+            <div class="avatar-area">
+                <div class="avatar">杰</div>
+                <div class="identity">
+                    <p>荷塘中学 · 九年级 (9) 班</p>
+                    <h1>杰米 Jamie</h1>
+                </div>
+            </div>
+            <div style="font-size: 13px; line-height: 1.8; font-weight: 600;">
+                正在用数学的逻辑和蓝色的冷静构建未来 不管了阿帕次阿帕次阿帕次阿帕次
+            </div>
+        </div>
+
+        <!-- 网格 -->
+        <div class="info-grid">
+            <div class="grid-item">
+                <span class="grid-label">最爱颜色</span>
+                <span class="grid-value" style="color: var(--apple-blue);">克莱因蓝</span>
+            </div>
+            <div class="grid-item">
+                <span class="grid-label">核心兴趣</span>
+                <span class="grid-value">数学逻辑</span>
+            </div>
+            <div class="grid-item math-card">
+                <span class="grid-label"></span>
+                <div class="formula">e<sup>iπ</sup> + 1 = 0</div>
+            </div>
+        </div>
+
+        <!-- 惊喜交互区域 -->
+        <div class="message-section" onclick="showSurprise()">
+            <span id="surprise-text">✨ 点开这个有杰米想对你说的话</span>
+        </div>
+
+        <div class="footer">
+            BORN THIS WAY<br>
+            爪子举起来 · 2026 新年预热 🐾
+        </div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            const textElement = document.getElementById('surprise-text');
+            const section = document.querySelector('.message-section');
+            
+            // 改变样式和文字
+            textElement.style.opacity = '0';
+            
+            setTimeout(() => {
+                textElement.innerHTML = "🎉 2026年新年快乐！";
+                textElement.style.fontSize = "22px";
+                textElement.style.color = "#ff2d55"; // 变成热情的红色
+                textElement.style.opacity = '1';
+                section.style.border = "none";
+                section.style.background = "#fff";
+                section.style.boxShadow = "0 10px 25px rgba(255, 45, 85, 0.2)";
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
